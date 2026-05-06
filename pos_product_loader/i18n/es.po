@@ -1,0 +1,186 @@
+# Spanish translation for pos_product_loader
+# Copyright (C) 2026 ITC
+# License LGPL-3 or later (http://www.gnu.org/licenses/lgpl).
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Module pos_product_loader 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "POS Product Import"
+msgstr "Importación de productos TPV"
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "POS Product Import %s"
+msgstr "Importación de productos TPV %s"
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "No import path configured. Set it in Point of Sale settings."
+msgstr "No hay ruta de importación configurada. Confígurela en los ajustes del Punto de Venta."
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "File not found: %s"
+msgstr "Fichero no encontrado: %s"
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "Line %(line)s: %(error)s"
+msgstr "Línea %(line)s: %(error)s"
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "Import finished without errors."
+msgstr "Importación completada sin errores."
+
+#. module: pos_product_loader
+#. odoo-python
+#: code:addons/pos_product_loader/models/pos_product_import.py:0
+msgid "Missing required field 'name'."
+msgstr "Falta el campo obligatorio 'name'."
+
+#. module: pos_product_loader
+#: model:ir.model,name:pos_product_loader.model_pos_product_import_log
+msgid "POS Product Import Log"
+msgstr "Registro de importación de productos TPV"
+
+#. module: pos_product_loader
+#: model:ir.model,name:pos_product_loader.model_pos_product_import_wizard
+msgid "POS Product Import Wizard"
+msgstr "Asistente de importación de productos TPV"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__import_path
+msgid "Import Path"
+msgstr "Ruta de importación"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__imported_count
+msgid "Imported"
+msgstr "Importados"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__updated_count
+msgid "Updated"
+msgstr "Actualizados"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__skipped_count
+msgid "Skipped"
+msgstr "Omitidos"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__error_count
+msgid "Errors"
+msgstr "Errores"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_pos_product_import_log__notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: pos_product_loader
+#: model:ir.model.fields,field_description:pos_product_loader.field_res_config_settings__pos_product_loader_path
+msgid "POS Product Loader Path"
+msgstr "Ruta de carga de productos TPV"
+
+#. module: pos_product_loader
+#: model:ir.model.fields.selection,name:pos_product_loader.selection__pos_product_import_log__status__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: pos_product_loader
+#: model:ir.model.fields.selection,name:pos_product_loader.selection__pos_product_import_log__status__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: pos_product_loader
+#: model:ir.model.fields.selection,name:pos_product_loader.selection__pos_product_import_log__status__error
+msgid "Error"
+msgstr "Error"
+
+#. module: pos_product_loader
+#: model:ir.actions.act_window,name:pos_product_loader.action_pos_product_import_log
+#: model:ir.ui.menu,name:pos_product_loader.menu_pos_product_import_logs
+msgid "Import Logs"
+msgstr "Registros de importación"
+
+#. module: pos_product_loader
+#: model:ir.actions.act_window,name:pos_product_loader.action_open_pos_product_import_wizard
+msgid "Import POS Products"
+msgstr "Importar productos TPV"
+
+#. module: pos_product_loader
+#: model:ir.ui.menu,name:pos_product_loader.menu_pos_product_loader_root
+msgid "Product Loader"
+msgstr "Cargador de productos"
+
+#. module: pos_product_loader
+#: model:ir.ui.menu,name:pos_product_loader.menu_pos_product_import_now
+msgid "Import Now"
+msgstr "Importar ahora"
+
+#. module: pos_product_loader
+#: model:ir.cron,cron_name:pos_product_loader.ir_cron_pos_product_loader_import
+msgid "POS Product Loader: Import Products"
+msgstr "Cargador TPV Comodoo: Importar productos"
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_pos_product_import_wizard_form
+msgid "The import will start from the path configured in Point of Sale settings."
+msgstr "La importación se iniciará desde la ruta configurada en los ajustes del Punto de Venta."
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_pos_product_import_wizard_form
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_pos_product_import_log_list
+msgid "Import"
+msgstr "Importar"
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_pos_product_import_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_res_config_settings_pos_product_loader
+msgid "POS Product Loader"
+msgstr "Cargador de productos TPV"
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_res_config_settings_pos_product_loader
+msgid "Filesystem import path"
+msgstr "Ruta de importación en el sistema de archivos"
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_res_config_settings_pos_product_loader
+msgid "Absolute Linux path where products.csv is stored."
+msgstr "Ruta absoluta en Linux donde se encuentra el fichero products.csv."
+
+#. module: pos_product_loader
+#: model_terms:ir.ui.view,arch_db:pos_product_loader.view_pos_product_import_log_form
+msgid "Run an import to see logs here."
+msgstr "Ejecuta una importación para ver los registros aquí."

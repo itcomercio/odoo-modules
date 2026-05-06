@@ -10,22 +10,23 @@ class PosProductImportLog(models.Model):
     _description = "POS Product Import Log"
     _order = "create_date desc"
 
-    name = fields.Char(required=True, default=lambda self: _("POS Product Import"))
+    name = fields.Char(string="Name", required=True, default=lambda self: _("POS Product Import"))
     status = fields.Selection(
         [
             ("draft", "Draft"),
             ("done", "Done"),
             ("error", "Error"),
         ],
+        string="Status",
         default="draft",
         required=True,
     )
-    import_path = fields.Char(readonly=True)
-    imported_count = fields.Integer(readonly=True)
-    updated_count = fields.Integer(readonly=True)
-    skipped_count = fields.Integer(readonly=True)
-    error_count = fields.Integer(readonly=True)
-    notes = fields.Text(readonly=True)
+    import_path = fields.Char(string="Import Path", readonly=True)
+    imported_count = fields.Integer(string="Imported", readonly=True)
+    updated_count = fields.Integer(string="Updated", readonly=True)
+    skipped_count = fields.Integer(string="Skipped", readonly=True)
+    error_count = fields.Integer(string="Errors", readonly=True)
+    notes = fields.Text(string="Notes", readonly=True)
 
     @api.model
     def cron_import_products(self):

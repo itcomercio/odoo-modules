@@ -1,5 +1,5 @@
 {
-    "name": "POS Product Loader",
+    "name": "Comodoo POS Product Loader",
     "summary": "Import POS products from a Linux filesystem path",
     "version": "19.0.1.0.0",
     "category": "Point of Sale",
