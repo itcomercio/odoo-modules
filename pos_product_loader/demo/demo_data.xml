@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="param_pos_product_loader_demo_path" model="ir.config_parameter">
+        <field name="key">pos_product_loader.import_path</field>
+        <field name="value">/tmp/odoo_pos_product_loader_demo</field>
+    </record>
+</odoo>
+

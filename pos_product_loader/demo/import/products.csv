@@ -1,0 +1,4 @@
+default_code,name,list_price,category,pos_category,image_file,barcode
+POS-COF-01,Espresso,1.50,Bebidas/Cafe,Barra/Cafe,espresso.png,841000000001
+POS-COF-02,Cappuccino,2.10,Bebidas/Cafe,Barra/Cafe,cappuccino.png,841000000002
+POS-SNK-01,Croissant,1.80,Comida/Bolleria,Vitrina/Bolleria,croissant.png,841000000003

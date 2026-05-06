@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_pos_product_loader" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.pos.product.loader</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='point_of_sale']" position="inside">
+                <block title="POS Product Loader">
+                    <setting string="Filesystem import path" help="Absolute Linux path where products.csv is stored.">
+                        <field name="pos_product_loader_path" placeholder="/opt/odoo/imports/pos_product_loader"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
