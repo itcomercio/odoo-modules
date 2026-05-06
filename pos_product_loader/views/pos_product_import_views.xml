@@ -4,9 +4,11 @@
         <field name="name">pos.product.import.log.list</field>
         <field name="model">pos.product.import.log</field>
         <field name="arch" type="xml">
-            <list>
-                <field name="create_date"/>
-                <field name="status"/>
+            <list create="0" delete="0">
+                <field name="create_date" string="Date"/>
+                <field name="status" widget="badge"
+                       decoration-success="status == 'done'"
+                       decoration-danger="status == 'error'"/>
                 <field name="import_path"/>
                 <field name="imported_count"/>
                 <field name="updated_count"/>
@@ -20,9 +22,9 @@
         <field name="name">pos.product.import.log.form</field>
         <field name="model">pos.product.import.log</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="0" edit="0">
                 <header>
-                    <field name="status" widget="statusbar" statusbar_visible="draft,done,error"/>
+                    <field name="status" widget="statusbar" statusbar_visible="done,error"/>
                 </header>
                 <sheet>
                     <group>

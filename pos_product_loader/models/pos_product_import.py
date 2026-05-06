@@ -13,12 +13,10 @@ class PosProductImportLog(models.Model):
     name = fields.Char(string="Name", required=True, default=lambda self: _("POS Product Import"))
     status = fields.Selection(
         [
-            ("draft", "Draft"),
             ("done", "Done"),
             ("error", "Error"),
         ],
         string="Status",
-        default="draft",
         required=True,
     )
     import_path = fields.Char(string="Import Path", readonly=True)
@@ -37,46 +35,29 @@ class PosProductImportLog(models.Model):
         config = self.env["ir.config_parameter"].sudo()
         import_path_value = (config.get_param("pos_product_loader.import_path") or "").strip()
 
-        log = self.create(
-            {
-                "name": _("POS Product Import %s") % fields.Datetime.now(),
-                "status": "draft",
-                "import_path": import_path_value,
-            }
-        )
-
         if not import_path_value:
-            log.write(
-                {
-                    "status": "error",
-                    "notes": _(
-                        "No import path configured. Set it in Point of Sale settings."
-                    ),
-                    "error_count": 1,
-                }
-            )
-            return log
+            return self.create({
+                "name": _("POS Product Import %s") % fields.Datetime.now(),
+                "status": "error",
+                "import_path": import_path_value,
+                "error_count": 1,
+                "notes": _("No import path configured. Set it in Point of Sale settings."),
+            })
 
         import_path = Path(import_path_value)
         csv_path = import_path / "products.csv"
         images_path = import_path / "images"
 
         if not csv_path.exists():
-            log.write(
-                {
-                    "status": "error",
-                    "notes": _("File not found: %s") % csv_path,
-                    "error_count": 1,
-                }
-            )
-            return log
+            return self.create({
+                "name": _("POS Product Import %s") % fields.Datetime.now(),
+                "status": "error",
+                "import_path": import_path_value,
+                "error_count": 1,
+                "notes": _("File not found: %s") % csv_path,
+            })
 
-        counters = {
-            "imported": 0,
-            "updated": 0,
-            "skipped": 0,
-            "errors": 0,
-        }
+        counters = {"imported": 0, "updated": 0, "skipped": 0, "errors": 0}
         messages = []
 
         with csv_path.open("r", encoding="utf-8", newline="") as csv_file:
@@ -94,17 +75,16 @@ class PosProductImportLog(models.Model):
         status = "done" if counters["errors"] == 0 else "error"
         notes = "\n".join(messages) if messages else _("Import finished without errors.")
 
-        log.write(
-            {
-                "status": status,
-                "imported_count": counters["imported"],
-                "updated_count": counters["updated"],
-                "skipped_count": counters["skipped"],
-                "error_count": counters["errors"],
-                "notes": notes,
-            }
-        )
-        return log
+        return self.create({
+            "name": _("POS Product Import %s") % fields.Datetime.now(),
+            "status": status,
+            "import_path": import_path_value,
+            "imported_count": counters["imported"],
+            "updated_count": counters["updated"],
+            "skipped_count": counters["skipped"],
+            "error_count": counters["errors"],
+            "notes": notes,
+        })
 
     def _process_row(self, row, images_path, counters):
         name = (row.get("name") or "").strip()
