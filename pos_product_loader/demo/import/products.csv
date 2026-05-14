@@ -1,4 +1,4 @@
 default_code,name,list_price,category,pos_category,image_file,barcode
-POS-COF-01,Espresso,1.50,Bebidas/Cafe,Barra/Cafe,espresso.png,841000000001
-POS-COF-02,Cappuccino,2.10,Bebidas/Cafe,Barra/Cafe,cappuccino.png,841000000002
-POS-SNK-01,Croissant,1.80,Comida/Bolleria,Vitrina/Bolleria,croissant.png,841000000003
+POS-COF-01,Vino Tinto,1.50,Bebidas/Cafe,Barra/Cafe,vino-tinto-copa.jpg,841000000001
+POS-COF-02,Vino Blanco,2.10,Bebidas/Cafe,Barra/Cafe,vino-blanco-copa.jpg,841000000002
+POS-SNK-01,Vino Rosado,1.80,Comida/Bolleria,Vitrina/Bolleria,vino-rosado-copa.jpg,841000000003

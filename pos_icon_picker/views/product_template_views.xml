@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_template_form_pos_icon_picker" model="ir.ui.view">
+        <field name="name">product.template.form.pos.icon.picker</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="after">
+                <button
+                    name="action_open_pos_icon_picker"
+                    type="object"
+                    string="Change POS Icon"
+                    class="btn btn-secondary"
+                    groups="point_of_sale.group_pos_manager"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_pos_icon_picker_products" model="ir.actions.act_window">
+        <field name="name">POS Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[("available_in_pos", "=", True)]</field>
+        <field name="context">{"default_available_in_pos": True}</field>
+    </record>
+
+    <menuitem id="menu_pos_icon_picker_root"
+              name="Icon Picker"
+              parent="point_of_sale.menu_point_root"
+              sequence="90"
+              groups="point_of_sale.group_pos_manager"/>
+
+    <menuitem id="menu_pos_icon_picker_products"
+              name="POS Products"
+              parent="menu_pos_icon_picker_root"
+              action="action_pos_icon_picker_products"
+              sequence="10"
+              groups="point_of_sale.group_pos_manager"/>
+</odoo>
+

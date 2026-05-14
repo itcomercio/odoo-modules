@@ -1,0 +1,145 @@
+# Spanish translation for pos_icon_picker
+# Copyright (C) 2026 ITC
+# License LGPL-3 or later (http://www.gnu.org/licenses/lgpl).
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Module pos_icon_picker 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-05-14 00:00+0000\n"
+"Last-Translator: ITC <info@itcsl.es>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_icon_picker
+#: model:ir.module.module,shortdesc:pos_icon_picker.module_pos_icon_picker
+msgid "Comodoo POS Icon Picker"
+msgstr "Comodoo Selector de Iconos TPV"
+
+#. module: pos_icon_picker
+#: model:ir.module.module,summary:pos_icon_picker.module_pos_icon_picker
+msgid "Pick POS product icons from bundled style libraries"
+msgstr "Selecciona iconos para productos TPV desde librerías de estilos incluidas"
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "You do not have permission to use the POS icon picker."
+msgstr "No tienes permisos para usar el selector de iconos TPV."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "You do not have permission to update POS icons."
+msgstr "No tienes permisos para actualizar iconos TPV."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "A product is required."
+msgstr "Se requiere un producto."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "Please select an icon style and icon file."
+msgstr "Selecciona un estilo de icono y un fichero de icono."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "Invalid style or file name."
+msgstr "Nombre de estilo o fichero no válido."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "Product not found."
+msgstr "Producto no encontrado."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/product_template.py:0
+msgid "Icon file not found: %s"
+msgstr "Fichero de icono no encontrado: %s"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Could not load icon styles."
+msgstr "No se pudieron cargar los estilos de iconos."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Select an icon before applying."
+msgstr "Selecciona un icono antes de aplicar."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "POS icon updated."
+msgstr "Icono TPV actualizado."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Could not apply selected icon."
+msgstr "No se pudo aplicar el icono seleccionado."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Product context is missing."
+msgstr "Falta el contexto del producto."
+
+#. module: pos_icon_picker
+#: model:ir.actions.act_window,name:pos_icon_picker.action_pos_icon_picker_products
+#: model:ir.ui.menu,name:pos_icon_picker.menu_pos_icon_picker_products
+msgid "POS Products"
+msgstr "Productos TPV"
+
+#. module: pos_icon_picker
+#: model:ir.ui.menu,name:pos_icon_picker.menu_pos_icon_picker_root
+msgid "Icon Picker"
+msgstr "Selector de iconos"
+
+#. module: pos_icon_picker
+#: model_terms:ir.ui.view,arch_db:pos_icon_picker.view_product_template_form_pos_icon_picker
+msgid "Change POS Icon"
+msgstr "Cambiar icono TPV"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Choose POS icon"
+msgstr "Elegir icono TPV"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Loading icons..."
+msgstr "Cargando iconos..."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Icon style"
+msgstr "Estilo de icono"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Apply Icon"
+msgstr "Aplicar icono"
+
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_icon_picker.PosIconPickerDialog">
+        <Dialog title="'Choose POS icon'" size="'xl'">
+            <div class="o_pos_icon_picker">
+                <t t-if="props.productName">
+                    <div class="mb-2 text-muted">
+                        <t t-esc="props.productName"/>
+                    </div>
+                </t>
+                <t t-if="state.loading">
+                    <div class="text-muted">Loading icons...</div>
+                </t>
+                <t t-elif="state.error">
+                    <div class="alert alert-danger" role="alert">
+                        <t t-esc="state.error"/>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="mb-3">
+                        <label class="form-label">Icon style</label>
+                        <select class="form-select" t-on-change="onStyleChange">
+                            <t t-foreach="state.styles" t-as="style" t-key="style.key">
+                                <option t-att-value="style.key" t-att-selected="style.key === state.selectedStyle ? 'selected' : null">
+                                    <t t-esc="style.label"/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="o_pos_icon_grid">
+                        <t t-foreach="currentIcons" t-as="icon" t-key="icon.filename">
+                            <button
+                                type="button"
+                                t-att-data-icon="icon.filename"
+                                t-attf-class="o_pos_icon_item #{state.selectedIcon === icon.filename ? 'is-selected' : ''}"
+                                t-on-click="onIconClick"
+                            >
+                                <img t-att-src="'data:image/png;base64,' + icon.image" t-att-alt="icon.name"/>
+                                <span><t t-esc="icon.name"/></span>
+                            </button>
+                        </t>
+                    </div>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button type="button" class="btn btn-secondary" t-on-click="props.close">
+                    Cancel
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    t-att-disabled="state.loading || !state.selectedIcon"
+                    t-on-click="onApply"
+                >
+                    Apply Icon
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
+
+

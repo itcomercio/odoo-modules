@@ -1,0 +1,39 @@
+.o_pos_icon_picker {
+    .o_pos_icon_grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        max-height: 55vh;
+        overflow: auto;
+    }
+
+    .o_pos_icon_item {
+        align-items: center;
+        background: #fff;
+        border: 1px solid #d8dadd;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+        text-align: center;
+
+        img {
+            height: 68px;
+            object-fit: contain;
+            width: 68px;
+        }
+
+        span {
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        &.is-selected {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+        }
+    }
+}
+
