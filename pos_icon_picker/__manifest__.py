@@ -1,13 +1,14 @@
 {
     "name": "Comodoo POS Icon Picker",
-    "summary": "Pick POS product icons from bundled style libraries",
+    "summary": "Pick POS icons and floor images from bundled style libraries",
     "version": "19.0.1.0.0",
     "category": "Point of Sale",
     "author": "ITC",
     "license": "LGPL-3",
-    "depends": ["point_of_sale", "product", "web"],
+    "depends": ["point_of_sale", "pos_restaurant", "product", "web"],
     "data": [
         "views/product_template_views.xml",
+        "views/restaurant_floor_views.xml",
     ],
     "assets": {
         "web.assets_backend": [

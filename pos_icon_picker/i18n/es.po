@@ -21,8 +21,8 @@ msgstr "Comodoo Selector de Iconos TPV"
 
 #. module: pos_icon_picker
 #: model:ir.module.module,summary:pos_icon_picker.module_pos_icon_picker
-msgid "Pick POS product icons from bundled style libraries"
-msgstr "Selecciona iconos para productos TPV desde librerías de estilos incluidas"
+msgid "Pick POS icons and floor images from bundled style libraries"
+msgstr "Selecciona iconos TPV e imagenes de piso desde librerias de estilos incluidas"
 
 #. module: pos_icon_picker
 #. odoo-python
@@ -62,6 +62,36 @@ msgstr "Producto no encontrado."
 
 #. module: pos_icon_picker
 #. odoo-python
+#: code:addons/pos_icon_picker/models/restaurant_floor.py:0
+msgid "You do not have permission to update floor images."
+msgstr "No tienes permisos para actualizar imagenes de piso."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/restaurant_floor.py:0
+msgid "A floor is required."
+msgstr "Se requiere una zona."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/restaurant_floor.py:0
+msgid "Please select an image style and image file."
+msgstr "Selecciona un estilo de imagen y un fichero de imagen."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/restaurant_floor.py:0
+msgid "Floor not found."
+msgstr "Zona no encontrada."
+
+#. module: pos_icon_picker
+#. odoo-python
+#: code:addons/pos_icon_picker/models/restaurant_floor.py:0
+msgid "Image file not found: %s"
+msgstr "Fichero de imagen no encontrado: %s"
+
+#. module: pos_icon_picker
+#. odoo-python
 #: code:addons/pos_icon_picker/models/product_template.py:0
 msgid "Icon file not found: %s"
 msgstr "Fichero de icono no encontrado: %s"
@@ -93,14 +123,44 @@ msgstr "No se pudo aplicar el icono seleccionado."
 #. module: pos_icon_picker
 #. odoo-javascript
 #: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Select an image before applying."
+msgstr "Selecciona una imagen antes de aplicar."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Floor image updated."
+msgstr "Imagen de piso actualizada."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Could not apply selected image."
+msgstr "No se pudo aplicar la imagen seleccionada."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
 msgid "Product context is missing."
 msgstr "Falta el contexto del producto."
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Floor context is missing."
+msgstr "Falta el contexto de la zona."
 
 #. module: pos_icon_picker
 #: model:ir.actions.act_window,name:pos_icon_picker.action_pos_icon_picker_products
 #: model:ir.ui.menu,name:pos_icon_picker.menu_pos_icon_picker_products
 msgid "POS Products"
 msgstr "Productos TPV"
+
+#. module: pos_icon_picker
+#: model:ir.actions.act_window,name:pos_icon_picker.action_pos_icon_picker_floor_plans
+#: model:ir.ui.menu,name:pos_icon_picker.menu_pos_icon_picker_floor_plans
+msgid "Floor Plans"
+msgstr "Diseño del piso"
 
 #. module: pos_icon_picker
 #: model:ir.ui.menu,name:pos_icon_picker.menu_pos_icon_picker_root
@@ -113,10 +173,21 @@ msgid "Change POS Icon"
 msgstr "Cambiar icono TPV"
 
 #. module: pos_icon_picker
+#: model_terms:ir.ui.view,arch_db:pos_icon_picker.view_restaurant_floor_form_pos_icon_picker
+msgid "Change Floor Image"
+msgstr "Cambiar imagen del piso"
+
+#. module: pos_icon_picker
 #. odoo-javascript
 #: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
 msgid "Choose POS icon"
 msgstr "Elegir icono TPV"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Choose Floor Image"
+msgstr "Elegir imagen del piso"
 
 #. module: pos_icon_picker
 #. odoo-javascript
@@ -126,9 +197,21 @@ msgstr "Cargando iconos..."
 
 #. module: pos_icon_picker
 #. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Loading images..."
+msgstr "Cargando imagenes..."
+
+#. module: pos_icon_picker
+#. odoo-javascript
 #: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
 msgid "Icon style"
 msgstr "Estilo de icono"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/js/pos_icon_picker_action.js:0
+msgid "Image style"
+msgstr "Estilo de imagen"
 
 #. module: pos_icon_picker
 #. odoo-javascript
@@ -141,5 +224,11 @@ msgstr "Cancelar"
 #: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
 msgid "Apply Icon"
 msgstr "Aplicar icono"
+
+#. module: pos_icon_picker
+#. odoo-javascript
+#: code:addons/pos_icon_picker/static/src/xml/pos_icon_picker_dialog.xml:0
+msgid "Apply Image"
+msgstr "Aplicar imagen"
 
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_restaurant_floor_form_pos_icon_picker" model="ir.ui.view">
+        <field name="name">restaurant.floor.form.pos.icon.picker</field>
+        <field name="model">restaurant.floor</field>
+        <field name="inherit_id" ref="pos_restaurant.view_restaurant_floor_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        name="action_open_pos_floor_image_picker"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-image"
+                        string="Change Floor Image"
+                        groups="point_of_sale.group_pos_manager"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

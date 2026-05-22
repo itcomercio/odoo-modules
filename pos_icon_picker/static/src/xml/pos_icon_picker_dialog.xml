@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="pos_icon_picker.PosIconPickerDialog">
-        <Dialog title="'Choose POS icon'" size="'xl'">
+        <Dialog title="titleLabel" size="'xl'">
             <div class="o_pos_icon_picker">
-                <t t-if="props.productName">
+                <t t-if="props.targetName">
                     <div class="mb-2 text-muted">
-                        <t t-esc="props.productName"/>
+                        <t t-esc="props.targetName"/>
                     </div>
                 </t>
                 <t t-if="state.loading">
-                    <div class="text-muted">Loading icons...</div>
+                    <div class="text-muted"><t t-esc="loadingLabel"/></div>
                 </t>
                 <t t-elif="state.error">
                     <div class="alert alert-danger" role="alert">
@@ -18,7 +18,7 @@
                 </t>
                 <t t-else="">
                     <div class="mb-3">
-                        <label class="form-label">Icon style</label>
+                        <label class="form-label"><t t-esc="styleLabel"/></label>
                         <select class="form-select" t-on-change="onStyleChange">
                             <t t-foreach="state.styles" t-as="style" t-key="style.key">
                                 <option t-att-value="style.key" t-att-selected="style.key === state.selectedStyle ? 'selected' : null">
@@ -52,7 +52,7 @@
                     t-att-disabled="state.loading || !state.selectedIcon"
                     t-on-click="onApply"
                 >
-                    Apply Icon
+                    <t t-esc="props.pickerMode === 'floor' ? 'Apply Image' : 'Apply Icon'"/>
                 </button>
             </t>
         </Dialog>

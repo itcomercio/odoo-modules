@@ -11,8 +11,10 @@ class PosIconPickerDialog extends Component {
     static components = { Dialog };
     static props = {
         close: { type: Function },
-        productId: { type: Number },
-        productName: { type: String, optional: true },
+        targetModel: { type: String },
+        targetId: { type: Number },
+        targetName: { type: String, optional: true },
+        pickerMode: { type: String },
     };
 
     setup() {
@@ -43,6 +45,18 @@ class PosIconPickerDialog extends Component {
         });
     }
 
+    get titleLabel() {
+        return this.props.pickerMode === "floor" ? _t("Choose Floor Image") : _t("Choose POS icon");
+    }
+
+    get styleLabel() {
+        return this.props.pickerMode === "floor" ? _t("Image style") : _t("Icon style");
+    }
+
+    get loadingLabel() {
+        return this.props.pickerMode === "floor" ? _t("Loading images...") : _t("Loading icons...");
+    }
+
     get currentIcons() {
         const currentStyle = this.state.styles.find((style) => style.key === this.state.selectedStyle);
         return currentStyle ? currentStyle.icons : [];
@@ -59,20 +73,33 @@ class PosIconPickerDialog extends Component {
 
     async onApply() {
         if (!this.state.selectedStyle || !this.state.selectedIcon) {
-            this.notification.add(_t("Select an icon before applying."), { type: "warning" });
+            const warningMsg =
+                this.props.pickerMode === "floor"
+                    ? _t("Select an image before applying.")
+                    : _t("Select an icon before applying.");
+            this.notification.add(warningMsg, { type: "warning" });
             return;
         }
+
+        const rpcMethod = this.props.pickerMode === "floor" ? "apply_pos_floor_image" : "apply_pos_icon";
+        const successMsg =
+            this.props.pickerMode === "floor" ? _t("Floor image updated.") : _t("POS icon updated.");
+        const errorMsg =
+            this.props.pickerMode === "floor"
+                ? _t("Could not apply selected image.")
+                : _t("Could not apply selected icon.");
+
         try {
-            await this.orm.call("product.template", "apply_pos_icon", [
-                this.props.productId,
+            await this.orm.call(this.props.targetModel, rpcMethod, [
+                this.props.targetId,
                 this.state.selectedStyle,
                 this.state.selectedIcon,
             ]);
-            this.notification.add(_t("POS icon updated."), { type: "success" });
+            this.notification.add(successMsg, { type: "success" });
             this.props.close();
             this.action.doAction({ type: "ir.actions.client", tag: "reload" });
         } catch (error) {
-            this.notification.add(error.message || _t("Could not apply selected icon."), {
+            this.notification.add(error.message || errorMsg, {
                 type: "danger",
             });
         }
@@ -80,14 +107,23 @@ class PosIconPickerDialog extends Component {
 }
 
 function openPosIconPicker(env, action) {
-    const productId = action?.params?.product_tmpl_id;
-    if (!productId) {
-        env.services.notification.add(_t("Product context is missing."), { type: "danger" });
+    const params = action?.params || {};
+    const targetModel = params.target_model || "product.template";
+    const targetId = params.target_id || params.product_tmpl_id;
+    const pickerMode = params.picker_mode || "product";
+
+    if (!targetId) {
+        const missingContextMsg =
+            pickerMode === "floor" ? _t("Floor context is missing.") : _t("Product context is missing.");
+        env.services.notification.add(missingContextMsg, { type: "danger" });
         return;
     }
+
     env.services.dialog.add(PosIconPickerDialog, {
-        productId,
-        productName: action.params.product_name || "",
+        targetModel,
+        targetId,
+        pickerMode,
+        targetName: params.target_name || params.product_name || "",
     });
 }
 

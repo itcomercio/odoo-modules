@@ -18,8 +18,10 @@ class ProductTemplate(models.Model):
             "type": "ir.actions.client",
             "tag": "pos_icon_picker_open",
             "params": {
-                "product_tmpl_id": self.id,
-                "product_name": self.display_name,
+                "target_model": "product.template",
+                "target_id": self.id,
+                "target_name": self.display_name,
+                "picker_mode": "product",
             },
         }
 
