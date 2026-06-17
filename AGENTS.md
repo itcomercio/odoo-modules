@@ -2,6 +2,10 @@
 
 Este documento proporciona información contextual y directrices para agentes de IA que trabajen en este repositorio.
 
+## Restricciones Críticas para Agentes
+- **PROHIBIDO** ejecutar comandos de Git que modifiquen la copia de trabajo o el historial (`git add`, `git commit`, `git checkout`, `git reset`, `git push`, etc.).
+- El agente solo debe crear o modificar archivos. La gestión del control de versiones (staging y commit) es responsabilidad exclusiva del usuario.
+
 ## Descripción del Proyecto
 Este repositorio es un conjunto de módulos personalizados para **Odoo 19.0**, diseñados para extender las capacidades del Punto de Venta (POS) y la carga de datos.
 
@@ -19,6 +23,12 @@ Este repositorio es un conjunto de módulos personalizados para **Odoo 19.0**, d
 - **Componentes clave**:
   - `pos_product_import.py`: Lógica de importación y procesamiento de CSV/imágenes.
   - `ir_cron_data.xml`: Tarea programada para la carga automática.
+
+### 3. `pos_screen_saver`
+- **Propósito**: Cambia el logo del salvapantallas (screensaver) del POS.
+- **Componentes clave**:
+  - `pos_screen_saver.scss`: Sobrescribe el estilo `.pos-logo` dentro de `.login-overlay`.
+  - `comodoo-logo.svg`: Logo personalizado de Comodoo.
 
 ## Tecnologías Principales
 - **Lenguaje**: Python 3.12+
